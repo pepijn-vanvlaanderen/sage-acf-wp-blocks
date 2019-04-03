@@ -55,7 +55,7 @@ add_action('acf/init', function () {
                       'icon' => 'Icon',
                       'keywords' => 'Keywords',
                       'mode' => 'Mode',
-                      'mode' => 'Align',
+                      'align' => 'Align',
                       'post_types' => 'PostTypes',
                       'supports' => 'Supports'
                     ]);
