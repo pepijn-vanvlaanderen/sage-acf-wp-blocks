@@ -18,6 +18,7 @@ Add blade templates to `views/blocks` which get and use ACF data. Each template 
   Keywords:
   Mode:
   PostTypes:
+  Supports:
 --}}
 ```
 
@@ -32,6 +33,7 @@ Add blade templates to `views/blocks` which get and use ACF data. Each template 
   Keywords: testimonial quote
   Mode: edit
   PostTypes: page, post
+  Supports: align:left,right|mode:false|multiple:false
 --}}
 
 <blockquote data-{{ $block['id'] }} class="{{ $block['classes'] }}">
