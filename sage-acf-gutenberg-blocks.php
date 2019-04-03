@@ -56,6 +56,7 @@ add_action('acf/init', function () {
                       'keywords' => 'Keywords',
                       'mode' => 'Mode',
                       'post_types' => 'PostTypes',
+                      'supports' => 'Supports'
                     ]);
 
                 if (empty($file_headers['title'])) {
@@ -81,6 +82,16 @@ add_action('acf/init', function () {
                 // If the PostTypes header is set in the template, restrict this block to thsoe types
                 if (!empty($file_headers['post_types'])) {
                     $data['post_types'] = explode(' ', $file_headers['post_types']);
+                }
+
+                if (!empty($file_headers['supports'])) {
+                    $supports = [];
+                    $support_options = explode('|', $file_headers['supports']);
+                    foreach ($support_options as $option) {
+                        list($k, $v) = explode(':', $option);
+                        $supports[$k] = strpos($v, ',') ? explode(',', $v) : $v;
+                    }
+                    $data['supports'] = $supports;
                 }
 
                 // Register the block with ACF
