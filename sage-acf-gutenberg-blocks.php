@@ -55,6 +55,7 @@ add_action('acf/init', function () {
                       'icon' => 'Icon',
                       'keywords' => 'Keywords',
                       'mode' => 'Mode',
+                      'mode' => 'Align',
                       'post_types' => 'PostTypes',
                       'supports' => 'Supports'
                     ]);
@@ -75,6 +76,7 @@ add_action('acf/init', function () {
                       'category' => $file_headers['category'],
                       'icon' => $file_headers['icon'],
                       'keywords' => explode(' ', $file_headers['keywords']),
+                      'align' => $file_headers['align'],
                       'mode' => $file_headers['mode'],
                       'render_callback'  => __NAMESPACE__.'\\sage_blocks_callback',
                     ];
