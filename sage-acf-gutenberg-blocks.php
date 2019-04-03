@@ -91,7 +91,7 @@ add_action('acf/init', function () {
                     $support_options = explode('|', $file_headers['supports']);
                     foreach ($support_options as $option) {
                         list($k, $v) = explode(':', $option);
-                        $supports[$k] = strpos($v, ',') || !in_array($v, ['false', 'true']) ? explode(',', $v) : $v;
+                        $supports[$k] = !in_array($v, ['false', 'true']) ? explode(',', $v) : filter_var($v, FILTER_VALIDATE_BOOLEAN);
                     }
                     $data['supports'] = $supports;
                 }
